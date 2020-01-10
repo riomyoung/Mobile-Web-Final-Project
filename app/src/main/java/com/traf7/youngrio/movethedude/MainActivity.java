@@ -3,16 +3,21 @@ package com.traf7.youngrio.movethedude;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.animation.ValueAnimator;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.view.ViewGroup;
 import android.view.animation.LinearInterpolator;
+import android.widget.Button;
 import android.widget.ImageView;
 
 public class MainActivity extends AppCompatActivity {
 
 
     //PART 1: https://stackoverflow.com/questions/36894384/android-move-background-continuously-with-animation
-    //PART 2:
+    //PART 2: https://stackoverflow.com/questions/8209858/android-background-music-service/8209975#8209975
     //PART3:
+    Button start;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,5 +42,17 @@ public class MainActivity extends AppCompatActivity {
         });
         animator.start();
 //PART 1 END
+//PART 2 START
+        Intent svc=new Intent(this, BackgroundSoundService.class);
+        startService(svc);
+//PART 2 END
+
+        start.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, Moving.class);
+                startActivity( intent );
+            }
+        });
     }
 }

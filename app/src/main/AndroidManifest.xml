@@ -20,18 +20,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <service
-            android:name="com.traf7.youngrio.movethedude.SensorService"
-            android:enabled="true" >
-        </service>
 
-        <receiver
-            android:name="com.traf7.youngrio.movethedude.SensorRestarterBroadcastReceiver"
-            android:enabled="true"
-            android:exported="true"
-            android:label="RestartServiceWhenStopped"
-            >
-        </receiver>
+        <service android:enabled="true" android:name=".BackgroundSoundService" />
     </application>
 
 </manifest>
