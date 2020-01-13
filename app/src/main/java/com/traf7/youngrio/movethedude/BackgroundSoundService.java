@@ -16,14 +16,14 @@ public class BackgroundSoundService extends Service {
     @Override
     public void onCreate() {
         super.onCreate();
-        player = MediaPlayer.create(this, R.raw.backgroundmusic);
+        player = MediaPlayer.create(this, R.raw.renaicirculation);
         player.setLooping(true); // Set looping
         player.setVolume(100,100);
 
     }
     public int onStartCommand(Intent intent, int flags, int startId) {
         player.start();
-        return 1;
+        return START_STICKY;
     }
 
     public void onStart(Intent intent, int startId) {

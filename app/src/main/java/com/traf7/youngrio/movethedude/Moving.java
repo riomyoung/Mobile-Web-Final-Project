@@ -1,3 +1,4 @@
+//PART 3
 package com.traf7.youngrio.movethedude;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -26,9 +27,39 @@ public class Moving extends AppCompatActivity {
         up.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ((ViewGroup.MarginLayoutParams)image.getLayoutParams()).topMargin -= 1;
+                ((ViewGroup.MarginLayoutParams)image.getLayoutParams()).topMargin -= 30;
                 image.requestLayout();
-                ((ViewGroup.MarginLayoutParams)image.getLayoutParams()).bottomMargin += 1;
+                ((ViewGroup.MarginLayoutParams)image.getLayoutParams()).bottomMargin += 30;
+                image.requestLayout();
+            }
+        });
+
+        down.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ((ViewGroup.MarginLayoutParams)image.getLayoutParams()).topMargin += 30;
+                image.requestLayout();
+                ((ViewGroup.MarginLayoutParams)image.getLayoutParams()).bottomMargin -= 30;
+                image.requestLayout();
+            }
+        });
+
+        left.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ((ViewGroup.MarginLayoutParams)image.getLayoutParams()).leftMargin -= 20;
+                image.requestLayout();
+                ((ViewGroup.MarginLayoutParams)image.getLayoutParams()).rightMargin += 20;
+                image.requestLayout();
+            }
+        });
+
+        right.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ((ViewGroup.MarginLayoutParams)image.getLayoutParams()).rightMargin -= 20;
+                image.requestLayout();
+                ((ViewGroup.MarginLayoutParams)image.getLayoutParams()).leftMargin += 20;
                 image.requestLayout();
             }
         });

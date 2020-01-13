@@ -16,12 +16,13 @@ public class MainActivity extends AppCompatActivity {
 
     //PART 1: https://stackoverflow.com/questions/36894384/android-move-background-continuously-with-animation
     //PART 2: https://stackoverflow.com/questions/8209858/android-background-music-service/8209975#8209975
-    //PART3:
+    //PART 3: https://stackoverflow.com/questions/33088728/moving-an-image-with-button-android-studio
     Button start;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        start = findViewById( R.id.startbutt);
 //PART 1
         final ImageView backgroundOne = (ImageView) findViewById(R.id.background_one);
         final ImageView backgroundTwo = (ImageView) findViewById(R.id.background_two);
